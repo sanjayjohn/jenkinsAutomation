@@ -92,6 +92,6 @@ For this example we will be pulling a JUnit Sample Test from QASymphony GitHub&#
  
 ## Running Automation:
 
-This job can be run from Jenkins, but to trigger this Jenkins job from the Automation Host follow the guide in the triggerJenkins directory
+This job can be run from Jenkins, but to trigger this Jenkins job from the Automation Host follow the guide in the triggerJenkins directory. With this example you do not need to have the qTest Plugin.
 
  
