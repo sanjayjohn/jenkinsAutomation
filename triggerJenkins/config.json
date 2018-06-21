@@ -1,0 +1,9 @@
+{
+  "JOBNAME":{
+    "JenkinsAPIToken": "JenkinsAPIToken",
+    "JenkinsJobName": "JenkinsJobName",
+    "JenkinsJobToken": "JenkinsJobToken",
+    "JenkinsURL": "jenkins.url:8080",
+    "JenkinsUserName": "admin"
+  }
+}
