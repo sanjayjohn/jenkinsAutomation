@@ -4,7 +4,7 @@
 
 This guide illustrates how to upload results to qTest using Python Scripts. This will allow the user to upload Robot output.xml results. Place this folder on your Jenkins workspace directory as shown below:
 
-![](../images/jenkinsdirectory.PNG)
+![](../../images/jenkinsdirectory.PNG)
 
 ## Set up Computer running Jenkins:
 
@@ -64,28 +64,28 @@ These commands will install the necessary modules required to run the python scr
 
 **project\_id:** The ID of the Project that the script will upload results to on qTest Manager
 
-![](../images/conf.png)
+![](../../images/conf.png)
 
 Open the conf.json file and update with your personal information. Enter your own qTest URL, API Token, and Project ID found in the qTest Manager Environment.
 
-![](../images/junitconf.png)
+![](../../images/junitconf.png)
 
 ## Set Up Jenkins General Configuration:
 
 For this example we will be pulling robot tests from BitBucket, which has a robot demo located at [https://bitbucket.org/robotframework/robotdemo/src/master/](https://bitbucket.org/robotframework/robotdemo/src/master/). Place the url in the Jenkins Project configuration as shown below.
 
-![](../images/jenkinsrobotgithub.PNG)
+![](../../images/jenkinsrobotgithub.PNG)
 
 ## Set up Jenkins Build Configuration
 
 ### For Mac Users (Use Execute shell):
 
- ![](../images/buildscriptjenkinsrobotmac.PNG
+ ![](../../images/buildscriptjenkinsrobotmac.PNG
 
 
 ### For Windows Users (Use Execute Windows batch command):
 
-![](../images/buildscriptjenkinsrobot.PNG)
+![](../../images/buildscriptjenkinsrobot.PNG)
  
 ## Running Automation:
 
