@@ -80,7 +80,7 @@ For this example we will be pulling robot tests from BitBucket, which has a robo
 
 ### For Mac Users (Use Execute shell):
 
- ![](../../images/buildscriptjenkinsrobotmac.PNG
+ ![](../../images/buildscriptjenkinsrobotmac.PNG)
 
 
 ### For Windows Users (Use Execute Windows batch command):
