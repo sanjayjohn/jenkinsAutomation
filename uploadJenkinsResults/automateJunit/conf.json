@@ -1,5 +1,5 @@
 {
-  "qtest_api_token": "ZGVtb3xzYW5qYXlqb2huQHFhc3ltcGhvbnkuY29tOjE1NTgwMTc5MjkzMTM6YWExYThkNmVmMmE4NmE0YmUxY2EzYjNlODA5MTU1YjQ",
-  "qtest_url": "https://demo.qtestnet.com", 
-  "project_id": "79992"
+  "qtest_api_token": "<Enter your qTest API Token Here>",
+  "qtest_url": "<Enter your qTest URL Here>",
+  "project_id": "<Enter Your Project ID Here>"
 }
