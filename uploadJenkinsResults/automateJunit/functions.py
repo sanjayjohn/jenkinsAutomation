@@ -27,9 +27,30 @@ def get_config():
         print("Error: Unexpected error loading configuration: " + str(e))
         return -1
 
+def get_jenkins_config():
+    # Check to ensure the configuration file exists and is readable.
+    try:
+        path = pathlib.Path("jenkinsconfig.json")
+        if path.exists() and path.is_file():
+            with open(path) as config_file:
+                try:
+                    qtest_config = json.load(config_file)
+                    return qtest_config
+                except json.JSONDecodeError:
+                    print("Error: Configuration file not in valid JSON format.")
+        else:
+            raise IOError
+    except IOError:
+        print("Error: Configuration file not found or inaccessible.")
+        return -1
+    except Exception as e:
+        print("Error: Unexpected error loading configuration: " + str(e))
+        return -1
 
-def create_test_logs_json(runName, stepName, status, note, log):
+
+def create_test_logs_json(runName, stepName, status, note, log, output):
     attachment = []
+    attachment.append(output)
     if log is not '':
         value = {'name': stepName, 'content_type': 'application/json', 'data': log}
         attachment.append(value)
@@ -44,13 +65,29 @@ def create_test_logs_json(runName, stepName, status, note, log):
             }
     return body
 
+def get_console_output():
+    config = get_jenkins_config()
+    JenkinsJob = sys.argv[3]
+    JenkinsAPIToken = config[JenkinsJob]['JenkinsAPIToken']
+    JenkinsJobName = config[JenkinsJob]['JenkinsJobName']
+    JenkinsJobToken = config[JenkinsJob]['JenkinsJobToken']
+    JenkinsURL = config[JenkinsJob]['JenkinsURL']
+    JenkinsUserName = config[JenkinsJob]['JenkinsUserName']
+    getConsoleOutputUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/lastBuild/consoleText"
+    output = requests.get(getConsoleOutputUrl)
+    output = base64.b64encode(bytes(output.text, 'utf-8'))
+    output = output.decode('utf-8')
+    value = {'name': 'ConsoleText.txt', 'content_type': 'application/json', 'data': output}
+    return value
+
 
 def post_all_tests():
     qtest_config = get_config()
     api_token = qtest_config["qtest_api_token"]
     qTestUrl = qtest_config["qtest_url"]
     projectId = qtest_config["project_id"]
-    body = parse_junit_results()
+    output = get_console_output()
+    body = parse_junit_results(output)
 
     baseUrl = '{}/api/v3/projects/{}/auto-test-logs'
 
@@ -84,7 +121,7 @@ def post_all_tests():
         print("Error: Unable to post data to qTest Manager API.")
         return -1
 
-def parse_junit_results():
+def parse_junit_results(output):
     try:
         directory = sys.argv[1]
     except:
@@ -127,7 +164,7 @@ def parse_junit_results():
                         status = 'SKIP'
                     else:
                         status = 'PASS'
-                    value = create_test_logs_json(name, step, status, message, failureLog)
+                    value = create_test_logs_json(name, step, status, message, failureLog, output)
                 body.append(value)
     return body
 

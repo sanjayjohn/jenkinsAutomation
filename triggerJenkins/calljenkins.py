@@ -2,7 +2,8 @@ import requests
 import json
 import sys
 
-with open('config.json', 'r') as f:
+
+with open('jenkinsconfig.json', 'r') as f:
     config = json.load(f)
 KeyList = ""
 
@@ -20,10 +21,15 @@ if len(sys.argv) > 1:
     if (CrumbResult.ok):
         Crumb = CrumbResult.content.decode().split(":")[1]
 
-        PostUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/build?token=" + JenkinsJobToken
-        Headers = {"Jenkins-Crumb": Crumb, "content-type": "application/x-www-form-urlencoded; charset=UTF-8"}
+        if len(sys.argv) < 3:
+            PostUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/build?token=" + JenkinsJobToken
+            Headers = {"Jenkins-Crumb": Crumb, "content-type": "application/x-www-form-urlencoded; charset=UTF-8"}
+            TriggerJenkinsJob = requests.post(PostUrl, headers=Headers)
+        else:
+            PostUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/buildWithParameters?token=" + JenkinsJobToken + "&" + sys.argv[2] + "=" + sys.argv[3]
+            Headers = {"Jenkins-Crumb": Crumb, "content-type": "application/x-www-form-urlencoded; charset=UTF-8"}
+            TriggerJenkinsJob = requests.post(PostUrl, headers=Headers)
 
-        TriggerJenkinsJob = requests.post(PostUrl, headers=Headers)
 
         #print(TriggerJenkinsJob.status_code)
 else:

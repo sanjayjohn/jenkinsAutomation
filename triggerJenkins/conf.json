@@ -1,5 +1,6 @@
 {
   "qtest_api_token": "ZGVtb3xzYW5qYXlqb2huQHFhc3ltcGhvbnkuY29tOjE1NTgwMTc5MjkzMTM6YWExYThkNmVmMmE4NmE0YmUxY2EzYjNlODA5MTU1YjQ",
   "qtest_url": "https://demo.qtestnet.com", 
-  "project_id": "79992"
+  "project_id": "79992",
+  "test_suite_id": "2415109"
 }

@@ -26,8 +26,8 @@ Your qTest URL and personal API Token will be needed for configuration in the fo
 
 ## Examples:
 
-- In the triggerJenkins directory, a guide is shown how to implement the python scripts to trigger a Jenkins job from your Automation Host.
+- In the triggerJenkins directory, a guide is shown how to implement the python scripts to trigger a Jenkins job from your Automation Host. The jobs can be run with or without choice parameters.
 
-- In the uploadJenkinsResults directory, choose the testing Framework example that you would like to see and follow the guide shown there to learn how to upload Jenkins results to qTest Manager
+- In the uploadJenkinsResults directory, choose the testing Framework example that you would like to see and follow the guide shown there to learn how to upload Jenkins results to qTest Manager. The console output is included in your uploaded results.
 
 
