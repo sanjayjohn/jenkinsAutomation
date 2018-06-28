@@ -4,7 +4,7 @@
 
 This guide illustrates how to upload results to qTest using Python Scripts. This will allow for more user customization than provided in the qTest plugin. Also, the console output will be appended to your test runs in the attachment section. Place this folder on your Jenkins workspace directory as shown below:
 
-![](../images/jenkinsdirectory.PNG)
+![](../../images/jenkinsdirectory.PNG)
 
 ## Set up Machine running Jenkins:
 
@@ -71,11 +71,11 @@ These commands will install the necessary modules required to run the python scr
 
 **project\_id:** The ID of the Project that the script will upload results to on qTest Manager
 
-![](../images/conf.png)
+![](../../images/conf.png)
 
 Open the conf.json file and update with your personal information. Enter your own qTest URL, API Token, and Project ID found in the qTest Manager Environment.
 
-![](../images/junitconf.png)
+![](../../images/junitconf.png)
 
 ### Jenkins Configuration file (jenkinsconfig.json)
 
@@ -83,13 +83,13 @@ Open the conf.json file and update with your personal information. Enter your ow
 
 **JenkinsAPIToken:** Your Jenkins API token, found under the administration of your user in Jenkins.
 
-![](../images/jenkinsapitoken.png)
+![](../../images/jenkinsapitoken.png)
 
 **JenkinsJobName:** The name of the Jenkins Job you want to trigger.
 
 **JenkinsJobToken:** The Authentication Token you define for your job under Build Triggers.
 
-![](../images/jenkinsjobtoken.png)
+![](../../images/jenkinsjobtoken.png)
 
 **JenkinsURL:** The base URL of your Jenkins instance.
 
@@ -97,25 +97,25 @@ Open the conf.json file and update with your personal information. Enter your ow
 
 An example configuration file is shown below. In this example there are two job instances that could be called by the script
 
-![](../images/confjenkins.png)
+![](../../images/confjenkins.png)
 
 
 ## Set Up Jenkins General Configuration:
 
 For this example we will be pulling a JUnit Sample Test from QASymphony GitHub&#39;s junit-sample [https://github.com/QASymphony/junit-sample](https://github.com/QASymphony/junit-sample). Place the url in in the Jenkins Project configuration as shown below.
 
-![](../images/jenkinsjunitgithub.PNG)
+![](../../images/jenkinsjunitgithub.PNG)
 
 ## Set up Jenkins Build Configuration:
 
 ### For Mac Users (Use Execute shell):
 
- ![](../images/buildscriptjenkinsjunitmac.PNG)
+ ![](../../images/buildscriptjenkinsjunitmac.PNG)
 
 
 ### For Windows Users (Use Execute Windows batch command):
 
-![](../images/buildscriptjenkinsjunit.PNG)
+![](../../images/buildscriptjenkinsjunit.PNG)
 
 ## Set Up Jenkins Post Build Configuration:
 
@@ -125,12 +125,12 @@ For this example we will be pulling a JUnit Sample Test from QASymphony GitHub&#
 
 ### For Mac Users (Use Execute shell):
 
- ![](../images/postbuildscriptjenkinsjunitmac.PNG)
+ ![](../../images/postbuildscriptjenkinsjunitmac.PNG)
 
 
 ### For Windows Users (Use Execute Windows batch command):
 
-![](../images/postbuildscriptjenkinsjunit.PNG)
+![](../../images/postbuildscriptjenkinsjunit.PNG)
 
 ### uploadQtest.py inputs
 
