@@ -26,7 +26,19 @@ if len(sys.argv) > 1:
             Headers = {"Jenkins-Crumb": Crumb, "content-type": "application/x-www-form-urlencoded; charset=UTF-8"}
             TriggerJenkinsJob = requests.post(PostUrl, headers=Headers)
         else:
-            PostUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/buildWithParameters?token=" + JenkinsJobToken + "&" + sys.argv[2] + "=" + sys.argv[3]
+            PostUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/buildWithParameters?token=" + JenkinsJobToken + "&"
+            first = True
+            for i in range(2, len(sys.argv)):
+                if i % 2 == 0:
+                    if first:
+                        string = sys.argv[i] + "=" + sys.argv[i + 1]
+                        PostUrl = PostUrl + string
+                        first = False
+                    else:
+                        string = "&" + sys.argv[i] + "=" + sys.argv[i + 1]
+                        PostUrl = PostUrl + string
+                else:
+                    continue
             Headers = {"Jenkins-Crumb": Crumb, "content-type": "application/x-www-form-urlencoded; charset=UTF-8"}
             TriggerJenkinsJob = requests.post(PostUrl, headers=Headers)
 
