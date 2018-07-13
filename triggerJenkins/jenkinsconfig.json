@@ -1,12 +1,12 @@
 {
-    "Robot": {
+    "ROBOT": {
         "JenkinsAPIToken": "bf1a4e936c565ded9d078b9e6139e42f",
         "JenkinsJobName": "RobotTest",
         "JenkinsJobToken": "authtoken",
         "JenkinsURL": "localhost:8080",
         "JenkinsUserName": "admin"
     },
-    "Junit": {
+    "JUNIT": {
         "JenkinsAPIToken": "bf1a4e936c565ded9d078b9e6139e42f",
         "JenkinsJobName": "JunitTest",
         "JenkinsJobToken": "authtoken",
