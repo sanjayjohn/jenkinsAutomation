@@ -86,7 +86,7 @@ An example configuration file is shown below. In this example there are two job 
 
 ## Set Up Jenkins General Configuration:
 
-For this example we will be pulling a JUnit Sample Test from QASymphony GitHub&#39;s junit-sample [https://github.com/QASymphony/junit-sample](https://github.com/QASymphony/junit-sample). Place the url in in the Jenkins Project configuration as shown below.
+For this example we will be pulling a NUnit Sample Test from GitHub&#39;s nunit-sample [https://github.com/sanjayjohn/nunit-sample.git](https://github.com/sanjayjohn/nunit-sample.git). Place the url in in the Jenkins Project configuration as shown below.
 
 ![](../../images/jenkinsnunitgithub.PNG)
 
