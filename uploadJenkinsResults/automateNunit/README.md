@@ -12,11 +12,9 @@ This guide illustrates how to upload results to qTest using Python Scripts. This
 
 2) Install Build Tools for Visual Studio from [https://www.visualstudio.com/downloads/](https://www.visualstudio.com/downloads/)
 
-3) Install Git for the Command Line from [https://git-scm.com/download/](https://git-scm.com/download/)
+3) Install Nunit Console from [https://github.com/nunit/nunit-console/releases/](https://github.com/nunit/nunit-console/releases/)
 
-4) Install Nunit Console from [https://github.com/nunit/nunit-console/releases/](https://github.com/nunit/nunit-console/releases/)
-
-5) Install Firefox from [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/)
+4) Install Firefox from [https://www.mozilla.org/en-US/firefox/new/](https://www.mozilla.org/en-US/firefox/new/)
 
 ### From Command Prompt:
 
