@@ -2,7 +2,7 @@
 
 ## Overview:
 
-This guide illustrates how to upload results to qTest using Python Scripts. This will allow for more user customization than provided in the qTest plugin. The testcases will be built automatically into the project with this API call even if they are not already created, and the test runs will appear under the Test Execution Tab under the "Selenium Automated Tests" test-cycle. Also, the console output will be appended to your test runs in the attachment section. Place this folder on your Jenkins workspace directory as shown below:
+This guide illustrates how to upload results to qTest using Python Scripts. This will allow for more user customization than provided in the qTest plugin. The testcases will be built automatically into the project with this API call even if they are not already created, and the test runs will appear in the Test Execution under the "Selenium Automated Tests" test-cycle. Also, the console output will be appended to your test runs in the attachment section. Place this folder in your Jenkins workspace directory as shown below:
 
 ![](../../images/jenkinsdirectory.PNG)
 
