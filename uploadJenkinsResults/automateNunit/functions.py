@@ -111,7 +111,11 @@ def parse_xml(output):
         status = tag['result']
         if tag.find('start-time') is not None and tag.find('end-time') is not None:
             start = tag['start-time']
+            startArr = start.split()
+            start = startArr[0] + 'T' + startArr[1]
             end = tag['end-time']
+            endArr = end.split()
+            end = endArr[0] + 'T' + endArr[1]           
         else:
             start = None
             end = None
