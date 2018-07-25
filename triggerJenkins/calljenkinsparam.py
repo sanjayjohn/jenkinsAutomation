@@ -62,7 +62,7 @@ if len(sys.argv) > 1:
     if (CrumbResult.ok):
         Crumb = CrumbResult.content.decode().split(":")[1]
 
-        if len(sys.argv) < 3:
+        if len(sys.argv) > 3:
             PostUrl = "http://" + JenkinsUserName + ":" + JenkinsAPIToken + "@" +  JenkinsURL + "/job/" + JenkinsJobName + "/build?token=" + JenkinsJobToken
             Headers = {"Jenkins-Crumb": Crumb, "content-type": "application/x-www-form-urlencoded; charset=UTF-8"}
             TriggerJenkinsJob = requests.post(PostUrl, headers=Headers)
