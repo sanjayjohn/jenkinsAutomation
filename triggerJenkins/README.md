@@ -2,7 +2,7 @@
 
 ## Overview:
 
-This example illustrates how to write a script that will trigger a Jenkins Job from the Automation Host
+This example illustrates how to write a script that will trigger a Jenkins Job from the Automation Host. The job can build with parameters, but it does not have to. 
 
 ## Set up Computer:
 
@@ -33,7 +33,7 @@ This command will install the necessary modules required to run the python scrip
 
 ## Update Configuration File:
 
-Open config.json and enter the values from your Jenkins instance.
+Open jenkinsconfig.json and enter the values from your Jenkins instance.
 
 **JOBNAME:** Name of the specific jenkins job that you want to run from the configuration file
 
@@ -77,9 +77,15 @@ An example configuration file is shown below. In this example there are two job 
 
 **Kick-off scripts:** The file path to your shell script. This shell scripts takes in two inputs, one for using git and the second for updating your current test cycle.
 
-### Python Script Input:
+### Python Script Inputs:
 
-The script takes in one arugment, which correlates to the name of the job configuration in the config.json file. In this example file shown above, the inputs could be either ROBOT or JUNIT. In this example we are using JUNIT.
+The script takes in one arugment if you are not using parameters, which correlates to the name of the job configuration in the config.json file. In this example file shown above, the inputs could be either ROBOT or JUNIT. In this example we are using JUNIT.
+
+If you are building a job with parameters, continue to add the parameter name and value as arugments as shown in the sample code below:
+
+`python calljenkins.py JUNIT ENV QA1 TEST T1`
+
+Above, we are using the credentials from the JUNIT section in the jenkinsconfig.json file, and we have two choice parameters. ENV with the value QA1 and TEST with the value T1. Make sure to have the job name as the first parameter.
 
 ## For Mac Users (Use python3):
 
