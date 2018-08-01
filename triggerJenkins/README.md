@@ -85,7 +85,7 @@ If you are building a job with parameters, continue to add the parameter name an
 
 `python calljenkins.py JUNIT ENV QA1 TEST T1`
 
-Above, we are using the credentials from the JUNIT section in the jenkinsconfig.json file, and we have two choice parameters. ENV with the value QA1 and TEST with the value T1. Make sure to have the job name as the first parameter.
+Above, we are using the credentials from the JUNIT section in the jenkinsconfig.json file, and we have two choice parameters. ENV with the value QA1 and TEST with the value T1. Make sure to have the job name as the first parameter. This command can be placed in the shell agent execution section as shown below.
 
 ## For Mac Users (Use python3):
 
